@@ -27,7 +27,8 @@ var FechaSchema = Schema({
     codigo_sancion_equipo2 :{type: Schema.ObjectId, ref:'Sancion'},
     observacion_equipo2: String,
     primera_segunda:Number   ,
-    jugado:{type:Boolean,default:false}
+    jugado:{type:Boolean,default:false},
+    nombre_equipo_vocalia: String
 });
 
 
