@@ -50,16 +50,16 @@ app.use('/',express.static('client', {redirect:false}));
 
 //----
 
-app.use('/usuario', usuarioRoute);
-app.use('/estadio', estadioRoute);
-app.use('/temporada',temporadaRoute);
-app.use('/fecha',fechaRoute);
-app.use('/sancion',sancionRoute);
-app.use('/categoria',categoriaRoute);
-app.use('/equipo',equipoRoute);
-app.use('/noticia',noticiaRoute);
+app.use('/api/usuario', usuarioRoute);
+app.use('/api/estadio', estadioRoute);
+app.use('/api/temporada',temporadaRoute);
+app.use('/api/fecha',fechaRoute);
+app.use('/api/sancion',sancionRoute);
+app.use('/api/categoria',categoriaRoute);
+app.use('/api/equipo',equipoRoute);
+app.use('/api/noticia',noticiaRoute);
 
-app.use('/personal',personalRoute);
+app.use('/api/personal',personalRoute);
 app.get('*',function(req,res,next){
 	res.sendFile(path.resolve('client/index.html'));
 })
