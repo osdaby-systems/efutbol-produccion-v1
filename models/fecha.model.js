@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 var FechaSchema = Schema({
     n_fecha:Number,
     estado_fecha:Boolean, //Este es el estado de la fecha (Jugado:True o No jugado: False)
-    fecha:Date,
+    fecha:String,
     hora:String,
     id_categoria: { type: Schema.ObjectId, ref: 'Categoria'},  //lodash filtrar vectores
     id_estadio: { type: Schema.ObjectId, ref: 'Estadio'},
@@ -28,6 +28,7 @@ var FechaSchema = Schema({
     observacion_equipo2: String,
     primera_segunda:Number   ,
     jugado:{type:Boolean,default:false},
+    nombre_equipo_vocalia: String,
     nombre_equipo_vocalia: String
 });
 
