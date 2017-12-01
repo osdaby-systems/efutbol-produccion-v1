@@ -3,9 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    // "start": "node index.js"                 para produccion descomentar
+    
      "start": "nodemon index.js" 
   },
+  
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "~1.17.1",
@@ -24,3 +25,7 @@
     "serve-favicon": "~2.4.2"
   }
 }
+
+
+
+

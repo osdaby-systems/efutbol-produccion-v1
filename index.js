@@ -7,7 +7,8 @@ var app = require('./app');
 //    puerto servidor web del backen
 var port = process.env.PORT || 3999;
 
-mongoose.connect('mongodb://<dbuser>:<dbpassword>@ds229835.mlab.com:29835/test-efutbol',(err,res)=>{
+mongoose.connect('mongodb://darwin:darwin@ds229835.mlab.com:29835/test-efutbol',(err,res)=>{
+    
     if(err){
         throw err;
     }else{
