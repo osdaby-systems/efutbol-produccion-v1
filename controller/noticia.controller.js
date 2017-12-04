@@ -37,18 +37,22 @@ function saveNoticia(req, res){
 	noticia.descripcion = params.descripcion;
 	noticia.observacion = params.observacion;	
 	noticia.usuario = params.usuario;
-console.log(req.files.image);
+console.log("La noticia: "+req.files.image);
 	if (req.files && req.files.image!=undefined) {
-		
+				console.log(req.files);
 				var file_path = req.files.image.path;
-				var file_split = file_path.split('/');
+				var file_split = file_path.split('\\');
 				var file_name = file_split[3];
-				//console.log(file_split);
+				console.log(file_split);
+				console.log("La ext");
 				var ext_split = file_name.split('\.');
+				console.log(ext_split);
 				var file_ext = ext_split[1];
-				//console.log(ext_split);
-				if (file_ext == 'png' || file_ext == 'jpg' || file_ext == 'gif') {
-		
+				console.log("La fle_ext");
+				console.log(file_ext);
+
+				if (file_ext == 'PNG' || file_ext == 'png' || file_ext == 'jpg' || file_ext == 'gif') {
+					console.log("Imagen Valida");
 					noticia.image = file_name;
 					//console.log(equipo)
 					noticia.save((err, noticiaGuardada) => {
@@ -64,6 +68,7 @@ console.log(req.files.image);
 						}
 					});		
 				} else {
+					console.log("Entra aqui");
 					res.status(200).send({
 						mensaje: "Extension del archivo no valido"
 					});
