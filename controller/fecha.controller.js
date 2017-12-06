@@ -275,7 +275,18 @@ function getFechaById(req,res){
 
 function getFechas(req,res){
     console.log("Getting  Fecha...");
-    Fecha.find({},(err,fechas)=>{
+    Fecha.find({})
+    .populate({path: 'goles_equipo1'})
+    .populate({path: 'goles_equipo2'})
+    .populate({
+        path: 'id_equipo1',        
+        populate: { path: 'personal_equipo' }
+      })
+    .populate({
+        path: 'id_equipo2',        
+        populate: { path: 'personal_equipo' }
+      })
+    .exec((err,fechas)=>{
         if(err){
             res.status(500).send({ mensaje: "Error en el servidor" });
         }else{

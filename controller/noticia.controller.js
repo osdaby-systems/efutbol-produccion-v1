@@ -101,7 +101,7 @@ function updateNoticia(req, res){
 	if (req.files && req.files.image!=undefined) {
 		
 				var file_path = req.files.image.path;
-				var file_split = file_path.split('/');
+				var file_split = file_path.split('\\');
 				var file_name = file_split[3];
 				//console.log(file_split);
 				var ext_split = file_name.split('\.');
