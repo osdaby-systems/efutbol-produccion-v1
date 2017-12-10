@@ -91,8 +91,9 @@ function updateEquipo(req, res) {
     if (req.files && req.files.escudo_equipo!=undefined) {     
                 console.log("Con imagen")           
 				var file_path = req.files.escudo_equipo.path;
-				var file_split = file_path.split('\\');
-				var file_name = file_split[3];
+				// var file_split = file_path.split('\\'); desarrollo
+                var file_split = file_path.split('/');
+                var file_name = file_split[3];
 				//console.log(file_split);
 				var ext_split = file_name.split('\.');
 				var file_ext = ext_split[1];
@@ -173,8 +174,8 @@ function uploadImage(req, res) {
 
     if (req.files) {
         var file_path = req.files.image.path;
-        // var file_split = file_path.split('/');           para produccion descomentar
-        var file_split = file_path.split('\\');
+        var file_split = file_path.split('/');
+        // var file_split = file_path.split('\\');   para desarrollo
         var file_name = file_split[3];
 
         var ext_split = file_name.split('\.');

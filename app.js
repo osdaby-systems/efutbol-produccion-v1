@@ -45,8 +45,9 @@ app.use((req, res, next) => {
 });
 
   app.use('/', index);
-//----para produccion
-// app.use('/',express.static('client', {redirect:false}));
+
+  //----para produccion
+ app.use('/',express.static('client', {redirect:false}));
 
 //----
 

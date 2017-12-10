@@ -80,8 +80,8 @@ function uploadImage(req, res){
 
 	if(req.files){
 		var file_path = req.files.imagen_estadio.path;
-        // var file_split = file_path.split('/');       para produccion descomentar
-        var file_split = file_path.split('\\');
+        var file_split = file_path.split('/');     
+        // var file_split = file_path.split('\\'); para desarrollo
 		var file_name = file_split[3];
 
 		var ext_split = file_name.split('\.');
